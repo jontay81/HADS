@@ -1,0 +1,45 @@
+---
+title: "Housing Affordability"
+author: "Jon Taylor"
+date: "November 15, 2016"
+output: ioslides_presentation
+---
+
+
+
+
+## Home-Value vs Total Salary
+- 100 Random Homes
+- Symbol Denotes Rent/Own
+- Color ~ Number of Bedrooms
+
+
+```{R, message=FALSE, warning=FALSE}
+setwd("~/code/R/HADS")
+hads <- read.csv('hads100.csv')
+library(plotly)
+
+#p <- plot_ly(data = hads, x=hads$TOTSAL, y=hads$VALUE, 
+#              type='scatter', mode='markers')
+#     subplot(
+#        add_markers(p, symbol = ~OWNRENT, color = ~BEDRMS)
+#     )
+
+
+```
+
+## Output
+
+
+```{R, echo =FALSE}
+p <- plot_ly(data = hads, x=hads$TOTSAL, y=hads$VALUE, type='scatter', mode='markers')
+     subplot(
+        add_markers(p, symbol = ~OWNRENT, color = ~BEDRMS)
+     )
+```
+
+
+
+
+##Thanks
+
